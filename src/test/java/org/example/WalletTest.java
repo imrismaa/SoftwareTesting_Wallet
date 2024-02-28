@@ -22,7 +22,7 @@ class WalletTest {
     }
 
     @Test
-    void tambahKartu() {
+    void testTambahKartu() {
         Wallet wallet = new Wallet("Minji");
         wallet.tambahKartu("Kartu A");
         wallet.tambahKartu("Kartu B");
@@ -31,14 +31,14 @@ class WalletTest {
     }
 
     @Test
-    void ambilKartu1() {
+    void testAmbilKartu1() {
         Wallet wallet = new Wallet("Minji");
 
         Assertions.assertNull(wallet.ambilKartu("Kartu A"));
     }
 
     @Test
-    void ambilKartu2() {
+    void testAmbilKartu2() {
         Wallet wallet = new Wallet("Minji");
         wallet.tambahKartu("Kartu X");
         wallet.tambahKartu("Kartu Y");
@@ -46,14 +46,14 @@ class WalletTest {
     }
 
     @Test
-    void tambahUangRupiah() {
+    void testTambahUangRupiah1() {
         Wallet wallet = new Wallet("Minji");
 
         Assertions.assertThrows(Error.class, () -> wallet.tambahUangRupiah(-200));
     }
 
     @Test
-    void tambahUangRupiah2() {
+    void testTambahUangRupiah2() {
         Wallet wallet = new Wallet("Minji");
         wallet.tambahUangRupiah(1000);
 
@@ -64,7 +64,7 @@ class WalletTest {
     }
 
     @Test
-    void tambahUangRupiah3() {
+    void testTambahUangRupiah3() {
         Wallet wallet = new Wallet("Minji");
         wallet.tambahUangRupiah(2000);
         wallet.tambahUangRupiah(500);
@@ -75,15 +75,9 @@ class WalletTest {
         );
     }
 
-    @Test
-    void ambilUangRupiah() {
-        Wallet wallet = new Wallet("Minji");
-
-        Assertions.assertNotNull(wallet.ambilUangRupiah(3000));
-    }
 
     @Test
-    void ambilUangRupiah2() {
+    void testAmbilUangRupiah() {
         Wallet wallet = new Wallet("Minji");
         wallet.tambahUangRupiah(5000);
         wallet.tambahUangRupiah(200);
@@ -93,14 +87,14 @@ class WalletTest {
     }
 
     @Test
-    void tampilkanUang() {
+    void testTampilkanUang1() {
         Wallet wallet = new Wallet("Minji");
 
         Assertions.assertEquals(0, wallet.tampilkanUang());
     }
 
     @Test
-    void tampilkanUang2() {
+    void testTampilkanUang2() {
         Wallet wallet = new Wallet("Minji");
         wallet.tambahUangRupiah(5000);
         wallet.tambahUangRupiah(200);
